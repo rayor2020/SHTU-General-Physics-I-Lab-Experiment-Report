@@ -1,0 +1,269 @@
+\documentclass[12pt]{article}
+
+% 设置中文支持
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{makecell}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% 设置页面边距
+\usepackage[a4paper, left=3.18cm, right=3.18cm, top=2.54cm, bottom=2.54cm]{geometry}
+
+% 设置标题、作者和日期
+\title{液体表面张力系数的测定物理实验报告}
+\author{袁子强\hspace{1cm} 2025533009}
+\date{\today}
+
+\begin{document}
+
+% 显示标题
+\maketitle
+
+% 记得剔除粗差、计算不确定度（计算过程）、图上标注原始数据、分析过程
+\section{圆环内外径 $D_1$ 与 $D_2$ 的测定}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        次数                         & 1     & 2     & 3     & 4     & 5     \\
+        \hline
+        $D_1\,(10^{-3}\,\text{m})$ & 35.16 & 35.12 & 35.10 & 34.90 & 35.02 \\
+        \hline
+        $D_2\,(10^{-3}\,\text{m})$ & 32.96 & 32.90 & 33.08 & 33.04 & 32.86 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+求 $\overline{D}$，以及 $\sigma_{\overline{D}}$。
+
+\subsection*{外径 $D_1$ 的数据处理}
+
+$$\begin{aligned}
+        \text{平均值}  &  & \overline{D_1}          & =35.06\times 10^{-3}\,\text{m}  \\
+        \text{标准偏差} &  & \sigma_{\overline{D_1}} & =0.0460\times 10^{-3}\,\text{m}
+    \end{aligned}$$
+
+使用拉依达准则（3$\sigma$准则）进行判断，所有数据点均未超过3倍标准偏差，因此无需剔除任何数据。
+
+\subsubsection*{计算不确定度 $U_{D_1}$}
+
+$$U_{D_1} = \sigma_{\overline{D_1}} = 0.0460 \times 10^{-3} \, \text{m}$$
+
+\subsection*{内径 $D_2$ 的数据处理}
+
+$$\begin{aligned}
+        \text{平均值}  &  & \overline{D_2}          & =32.97\times 10^{-3}\,\text{m}  \\
+        \text{标准偏差} &  & \sigma_{\overline{D_2}} & =0.0413\times 10^{-3}\,\text{m}
+    \end{aligned}$$
+
+使用拉依达准则（3$\sigma$准则）进行判断，所有数据点均未超过3倍标准偏差，因此无需剔除任何数据。
+
+\subsubsection*{计算不确定度 $U_{D_2}$}
+
+$$U_{D_2} = \sigma_{\overline{D_2}} = 0.0413 \times 10^{-3} \, \text{m}$$
+
+综上，
+\begin{align*}
+    \overline{D_1} & =(35.06\pm 0.05)\times 10^{-3}\,\text{m}                     \\
+    \overline{D_2} & =(32.97\pm 0.04)\times 10^{-3}\,\text{m}                     \\
+    \overline{D}   & =\overline{D_1}+\overline{D_2}=68.03\times 10^{-3}\,\text{m}
+\end{align*}
+
+\subsection{误差分析}
+
+\subsubsection*{系统误差}
+
+\begin{enumerate}
+    \item 仪器固有误差；
+    \item 圆环几何缺陷。
+\end{enumerate}
+
+\subsubsection*{随机误差}
+
+\begin{enumerate}
+    \item 估读误差；
+    \item 由于圆环可能存在几何缺陷，在不同方位测量时获得略有差异的直径值；
+    \item 金属圆环的热胀冷缩可能引起微小尺寸变化；
+    \item 游标卡尺夹紧力不一致可能导致微小形变。
+\end{enumerate}
+
+\section{力敏传感器定标，$U=B\cdot f$。}
+
+定标时 $f=mg$，上海地区 $g=9.794\,\text{N/kg}$。
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        \makecell{砝码质量 $m$ \\($10^{-3}$\,kg)}&0.500&1.000&1.500&2.000&2.500&3.000&3.500 \\
+        \hline
+        \makecell{电压 $U$   \\($10^{-3}$\,V)}&15.8&29.5&48.2&64.2&80.1&95.9&111.3    \\
+        \hline
+    \end{tabular}
+\end{table}
+
+作 $U-f$ 拟合直线，求 $B$。
+
+\newpage
+
+\subsection*{计算拉力 $f$}
+
+\begin{table}[htbp]
+    \centering
+    $f=m\cdot g$\\
+    \begin{tabular}{c|ccccccc}
+        $m$ ($10^{-3}$\,kg) & 0.500 & 1.000 & 1.500  & 2.000  & 2.500  & 3.000  & 3.500  \\
+        \hline
+        $f$ ($10^{-3}$\,N)  & 4.897 & 9.794 & 14.691 & 19.588 & 24.485 & 29.382 & 34.279 \\
+        $U$ ($10^{-3}$\,V)  & 15.8  & 29.5  & 48.2   & 64.2   & 80.1   & 95.9   & 111.3\end{tabular}
+\end{table}
+
+\subsection*{线性拟合计算}
+
+\begin{align*}
+    y            & =ax+b                     \\
+    U            & =3.291f-0.8857,\ r=0.9996 \\
+    \therefore B & =3.291\,\text{V/N}
+\end{align*}
+
+\begin{tikzpicture}
+    \begin{axis}[
+            width=14cm,
+            height=9cm,
+            title={力敏传感器定标线性拟合},
+            xlabel={拉力 $f$ ($10^{-3}$\,N)},
+            ylabel={电压 $U$ ($10^{-3}$\,V)},
+            grid=major,
+            legend pos=north west,
+            xmin=0, xmax=40,
+            ymin=0, ymax=120,
+            xtick distance=5,
+            ytick distance=20,
+        ]
+
+        % 数据点
+        \addplot[
+            only marks,
+            mark=*,
+            blue,
+            mark size=3pt,
+            nodes near coords,
+            point meta=explicit symbolic,
+            every node near coord/.style={anchor=west, xshift=5pt, color=blue, font=\tiny}
+        ]
+        coordinates {
+                (4.897, 15.8) [$(4.90,15.8)$]
+                (9.794, 29.5) [$(9.79,29.5)$]
+                (14.691, 48.2) [$(14.69,48.2)$]
+                (19.588, 64.2) [$(19.59,64.2)$]
+                (24.485, 80.1) [$(24.49,80.1)$]
+                (29.382, 95.9) [$(29.38,95.9)$]
+                (34.279, 111.3) [$(34.28,111.3)$]
+            };
+        \addlegendentry{实验数据}
+
+        % 拟合直线
+        \addplot[domain=0:36, thick, red] {3.291*x - 0.8857};
+        \addlegendentry{拟合直线 $U = 3.291f - 0.8857$}
+
+        % 添加拟合参数注释
+        \node [anchor=south east, draw, fill=white, rounded corners, align=left] at (axis description cs:0.98,0.02) {
+            \scriptsize
+            拟合结果: \\
+            $B = 3.291\,\text{V/N}$ \\
+            截距 $a = -0.8857\times 10^{-3}\,\text{V}$ \\
+            $r = 0.9996$
+        };
+
+    \end{axis}
+
+\end{tikzpicture}
+
+\subsection{误差分析}
+
+\subsubsection*{系统误差}
+
+\begin{enumerate}
+    \item 力敏传感器非线性，可能存在零位漂移；
+    \item 砝码盘悬挂系统存在微小摩擦。
+\end{enumerate}
+
+\subsubsection*{随机误差}
+
+\begin{enumerate}
+    \item 电压读数波动明显；
+    \item 多次取放砝码可能引入微小质量变化（我把砝码掉水里了）；
+    \item 实验室温度变化影响传感器稳定；
+    \item 实验台微小振动、砝码盘摇晃导致电压读数不稳定；
+    \item 周围电器设备（如操作手机、平板电脑）可能对微弱电压信号产生干扰。
+\end{enumerate}
+
+\section{$\Delta U$ 的测定，求出 $\alpha$}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        测量次数 & $U_1/(10^{-3}\,\text{V})$ & $U_2/(10^{-3}\,\text{V})$ & $\Delta U/(10^{-3}\,\text{V})$ & $\alpha=\frac{\Delta U}{B\pi D}$ \\
+        \hline
+        1    & 29.4                      & -17.0                     & 46.4                           & 0.06596                          \\
+        \hline
+        2    & 29.0                      & -17.0                     & 46.0                           & 0.06540                          \\
+        \hline
+        3    & 29.3                      & -17.0                     & 46.3                           & 0.06582                          \\
+        \hline
+        4    & 29.3                      & -17.1                     & 46.4                           & 0.06596                          \\
+        \hline
+        5    & 28.5                      & -17.2                     & 45.7                           & 0.06497                          \\
+        \hline
+        6    & 28.5                      & -17.3                     & 45.8                           & 0.06511                          \\
+        \hline
+    \end{tabular}
+\end{table}
+
+根据理论公式，求出 $\alpha$。
+
+$$\begin{aligned}
+        \text{平均值}  &  & \overline{\alpha}          & =0.0655\,\text{N/m}              \\
+        \text{标准偏差} &  & \sigma_{\overline{\alpha}} & =17.89\times 10^{-3}\,\text{N/m}
+    \end{aligned}$$
+
+\subsection*{计算不确定度 $U_{\alpha}$}
+
+$$U_{\alpha} = \sigma_{\overline{\alpha}} = 0.1789\times 10^{-3}\,\text{N/m}$$
+
+综上，$\overline{\alpha}  =(0.0655\pm 0.00018)\,\text{N/m}$
+
+\subsection{误差分析}
+
+\subsubsection*{系统误差}
+
+\begin{enumerate}
+    \item 使用公式基于理想假设，未完全考虑圆环浸入液体部分的浮力效应，且实际液膜形状可能偏离理论模型；
+    \item 各种测量误差会传递；
+    \item 圆环边缘可能不够锋利，影响液膜断裂行为；
+    \item 圆环表面可能存在微小污染物，改变液体的润湿特性；
+    \item 我接的是实验室的自来水而非纯水。
+\end{enumerate}
+
+\subsubsection*{随机误差}
+
+\begin{enumerate}
+    \item 拉脱点判断存在主观性；
+    \item 手动控制升降，拉脱速度不一致；
+    \item 圆环圆环未完全水平放置；
+    \item 实验过程中液体表面可能受到微小扰动，影响表面张力的稳定性和拉脱过程的重复性；
+    \item 实验室温度变化影响水的表面张力系数；
+    \item 多次测量过程中，水中可能溶解空气中的杂质或油脂，改变表面张力；
+    \item 多次测量导致水量微小变化，影响液面状态。
+\end{enumerate}
+
+\end{document}

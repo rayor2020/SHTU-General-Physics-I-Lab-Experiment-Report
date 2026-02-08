@@ -1,0 +1,521 @@
+\documentclass[12pt]{article}
+
+% 设置中文支持
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{makecell}
+
+% 设置页面边距
+\usepackage[a4paper, left=1.91cm, right=1.91cm, top=2.54cm, bottom=2.54cm]{geometry}
+
+% 设置标题、作者和日期
+\title{测量物体的转动惯量物理实验报告}
+\author{袁子强\hspace{1cm} 2025533009}
+\date{\today}
+
+\begin{document}
+
+% 显示标题
+\maketitle
+
+致指导老师：思考题在最后。
+% 记得剔除粗差、计算不确定度（计算过程）、图上标注原始数据、分析过程
+\section{砝码质量 $m$、圆环样品质量 $M_{\text{环}}$、圆环内外径 $D_{\text{内}},D_{\text{\text{外}}}$、圆柱质量 $M_{\text{柱}}$、圆环直径 $D_{\text{柱}}$ 的测量}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+        测量次数                                & 1      & 2      & 3      & 4      & 5      & 6      & 平均值    & $\sigma_{\text{平均值}}$ \\
+        \hline
+        $m\,(10^{-3}\,\si{kg})$             & 39.1   & 39.1   & 39.1   & 39.1   & 39.1   & 39.0   & 39.1   & 0.0167                \\
+        \hline
+        $M_{\text{环}}\,(10^{-3}\,\si{kg})$  & 427.5  & 427.5  & 427.5  & 427.5  & 427.5  & 427.5  & 427.5  & 0.0000                \\
+        \hline
+        $D_{\text{内}}\,(10^{-3}\,\si{m})$   & 240.26 & 240.10 & 240.08 & 240.10 & 240.08 & 240.10 & 240.12 & 0.0283                \\
+        \hline
+        $D_{\text{外}}\,(10^{-3}\,\si{m})$   & 209.76 & 209.78 & 209.86 & 209.82 & 209.84 & 209.82 & 209.81 & 0.0152                \\
+        \hline
+        $M_{\text{柱1}}\,(10^{-3}\,\si{kg})$ & 164.8  & 164.7  & 164.7  & 164.8  & 164.7  & 164.7  & 164.73 & 0.0172                \\
+        \hline
+        $M_{\text{柱2}}\,(10^{-3}\,\si{kg})$ & 165.0  & 164.9  & 165.0  & 165.0  & 165.0  & 165.0  & 164.98 & 0.0167                \\
+        \hline
+        $D_{\text{柱1}}\,(10^{-3}\,\si{m})$  & 29.92  & 29.94  & 29.94  & 29.92  & 30.00  & 29.96  & 29.95  & 0.0123                \\
+        \hline
+        $D_{\text{柱2}}\,(10^{-3}\,\si{m})$  & 30.02  & 30.00  & 30.00  & 30.00  & 29.98  & 29.98  & 30.00  & 0.00615               \\
+        \hline
+    \end{tabular}
+\end{table}
+
+因此，
+$$\begin{aligned}
+        m             & =(39.1\pm0.017)\times10^{-3}\,\si{kg}   \\
+        M_{\text{环}}  & =427.5\times10^{-3}\,\si{kg}            \\
+        D_{\text{内}}  & =(240.12\pm0.028)\times10^{-3}\,\si{m}  \\
+        D_{\text{外}}  & =(209.81\pm0.015)\times10^{-3}\,\si{m}  \\
+        M_{\text{柱1}} & =(164.73\pm0.017)\times10^{-3}\,\si{kg} \\
+        M_{\text{柱2}} & =(164.98\pm0.017)\times10^{-3}\,\si{kg} \\
+        D_{\text{柱1}} & =(29.95\pm0.012)\times10^{-3}\,\si{m}   \\
+        D_{\text{柱2}} & =(30.00\pm0.0062)\times10^{-3}\,\si{m}  \\
+    \end{aligned}$$
+
+塔轮半径（已知）：$15\times10^{-3}\,\si{m}$
+
+\subsection{误差分析}
+
+\subsubsection*{系统误差}
+\begin{enumerate}
+    \item 仪器固有误差、精度限制；
+    \item 实验过程中环境温度、湿度的变化可能导致被测金属物体和测量仪器发生不易察觉的微小热胀冷缩；
+    \item 假设被测物体为完美的匀质刚体，与真实物体存在微观差异。
+\end{enumerate}
+
+\subsubsection*{随机误差}
+\begin{enumerate}
+    \item 读数与估读存在主观性；
+    \item 测量圆柱直径等较小尺寸时，测量面与圆柱的接触压力、对中性略有不同；
+    \item 每次测量长度时，卡尺测量面与被测物表面的接触状态（如平行度、夹紧力）难以完全重复。
+\end{enumerate}
+
+\section{样品台恒力矩作用下的角加速度测量}
+
+\begin{table}[H]
+    \centering
+    $\beta_1$ 的测量\\
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        k               & 1      & 2      & 3      & 4      & 5      & 6      & 7      & 8      & 9      & 10     \\
+        \hline
+        $t_k\,(\si{s})$ & 0.1698 & 0.3400 & 0.5104 & 0.6814 & 0.8526 & 1.0243 & 1.1961 & 1.3685 & 1.5412 & 1.7143 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+计算 $\beta_1$：
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        数据组 $(m,n)$                                             & (1,6)   & (2,7)   & (3,8)   & (4,9)   & (5,10)  & $\overline{\beta_1}$ & $\sigma_{\overline{\beta_1}}$ \\
+        \hline
+        $\beta_1=\frac{2\pi(k_nt_m-k_mt_n)}{t_n^2t_m-t_m^2t_n}$ & -0.2325 & -0.2202 & -0.2338 & -0.2240 & -0.2270 & −0.2275              & 0.0026                        \\
+        \hline
+    \end{tabular}
+\end{table}
+
+因此 $\beta_1=-(0.2275\pm 0.0026)\,\si{rad/s^2}$
+
+\begin{table}[H]
+    \centering
+    $\beta_2$ 的测量\\
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        k               & 1      & 2      & 3      & 4      & 5      & 6      & 7      & 8      & 9      & 10     \\
+        \hline
+        $t_k\,(\si{s})$ & 1.0686 & 1.8933 & 2.5914 & 3.2119 & 3.7771 & 4.3005 & 4.7898 & 5.2513 & 5.6878 & 6.1033 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+计算 $\beta_2$：
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        数据组                                                     & (1,6)  & (2,7)  & (3,8)  & (4,9)  & (5,10) & $\overline{\beta_2}$ & $\sigma_{\overline{\beta_2}}$ \\
+        \hline
+        $\beta_2=\frac{2\pi(k_nt_m-k_mt_n)}{t_n^2t_m-t_m^2t_n}$ & 0.8926 & 0.8783 & 0.8637 & 0.8549 & 0.8498 & 0.8679               & 0.0079                        \\
+        \hline
+    \end{tabular}
+\end{table}
+
+因此 $\beta_2=(0.8679\pm 0.0079)\,\si{rad/s^2}$
+
+因此 $J_1=\frac{mR(g-R\beta_2)}{\beta_2-\beta_1}=5.24\times10^{-3}\,\si{kg\cdot m^2}$
+
+\section{样品台+圆环恒力矩作用下的角加速度测量}
+
+\begin{table}[H]
+    \centering
+    $\beta_3$ 的测量\\
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        k               & 1      & 2      & 3      & 4      & 5      & 6      & 7      & 8      & 9      & 10     \\
+        \hline
+        $t_k\,(\si{s})$ & 0.2098 & 0.5203 & 0.7811 & 1.0426 & 1.3044 & 1.5670 & 1.8298 & 2.0934 & 2.3573 & 2.6219 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+计算 $\beta_3$：
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        数据组 $(m,n)$                                             & (1,6)             & (2,7) & (3,8) & (4,9) & (5,10) & $\overline{\beta_3}$ & $\sigma_{\overline{\beta_3}}$ \\
+        \hline
+        $\beta_3=\frac{2\pi(k_nt_m-k_mt_n)}{t_n^2t_m-t_m^2t_n}$ & \makecell{-4.3406                                                                                         \\（异常值）} & -0.0882 & -0.0919 & -0.0891 & -0.0913 & −0.0901              & 0.0009                        \\
+        \hline
+    \end{tabular}
+\end{table}
+
+因此 $\beta_3=-(0.0901\pm 0.0009)\,\si{rad/s^2}$
+
+\begin{table}[H]
+    \centering
+    $\beta_4$ 的测量\\
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        k               & 1      & 2      & 3      & 4      & 5      & 6      & 7      & 8      & 9      & 10     \\
+        \hline
+        $t_k\,(\si{s})$ & 1.4851 & 2.6253 & 3.5890 & 4.4441 & 5.2208 & 5.9396 & 6.6103 & 7.2431 & 7.8420 & 8.4125 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+计算 $\beta_4$：
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        数据组                                                     & (1,6)  & (2,7)  & (3,8)  & (4,9)  & (5,10) & $\overline{\beta_4}$ & $\sigma_{\overline{\beta_4}}$ \\
+        \hline
+        $\beta_4=\frac{2\pi(k_nt_m-k_mt_n)}{t_n^2t_m-t_m^2t_n}$ & 0.4751 & 0.4685 & 0.4616 & 0.4579 & 0.4548 & 0.4636               & 0.0037                        \\
+        \hline
+    \end{tabular}
+\end{table}
+
+因此 $\beta_4=(0.4636\pm 0.0037)\,\si{rad/s^2}$
+
+因此 $J_2=\frac{mR(g-R\beta_4)}{\beta_4-\beta_3}=10.38\times10^{-3}\,\si{kg\cdot m^2}$
+
+因此 $J_3=J_2-J_1=5.14\times10^{-3}\,\si{kg\cdot m^2}$
+
+计算值 $J_3^c=M_{\text{环}}R_{\text{环}}^2\approx5.38\times10^{-3}\,\si{kg\cdot m^2}$
+
+相对误差 $E\approx-4.46\%$
+
+\subsection{误差分析}
+
+\subsubsection*{系统误差}
+\begin{enumerate}
+    \item 圆环放置于载物台上时可能存在微小的偏心或倾斜，导致实际转轴偏离几何中心；
+    \item 圆环在转动过程中可能发生微小的相对滑动或振动，影响角加速度的稳定测量；
+    \item 轴承摩擦、空气阻力等实际摩擦力矩可能与角速度有关；
+    \item 滑轮存在转动惯量、细绳也可能有轻微弹性或与塔轮间存在滑动。
+\end{enumerate}
+
+\subsubsection*{随机误差}
+\begin{enumerate}
+    \item 测量时间 $t$ 在启动和停止计时时的人工操作存在反应时间延迟；
+    \item 手动拨动载物台赋予初始角速度使初始状态控制存在随机性。
+\end{enumerate}
+
+\section{样品台+圆柱恒力矩作用下的角加速度测量（平行轴定理验证）}
+
+孔离中心的距离（已知）：$d=45\times10^{-3}\,\si{m}$
+
+\begin{table}[H]
+    \centering
+    $\beta_5$ 的测量\\
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        k               & 1      & 2      & 3      & 4      & 5      & 6      & 7      & 8      & 9      & 10     \\
+        \hline
+        $t_k\,(\si{s})$ & 0.2504 & 0.5018 & 0.7538 & 1.0067 & 1.2601 & 1.5146 & 1.7695 & 2.0255 & 2.2820 & 2.5396 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+计算 $\beta_5$：
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        数据组 $(m,n)$                                             & (1,6)   & (2,7)   & (3,8)   & (4,9)   & (5,10)  & $\overline{\beta_5}$ & $\sigma_{\overline{\beta_5}}$ \\
+        \hline
+        $\beta_5=\frac{2\pi(k_nt_m-k_mt_n)}{t_n^2t_m-t_m^2t_n}$ & -0.1599 & -0.1474 & -0.1492 & -0.1452 & -0.1489 & -0.1501              & 0.0025                        \\
+        \hline
+    \end{tabular}
+\end{table}
+
+因此 $\beta_5=-(0.1501\pm 0.0025)\,\si{rad/s^2}$
+
+\begin{table}[H]
+    \centering
+    $\beta_6$ 的测量\\
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        k               & 1      & 2      & 3      & 4      & 5      & 6      & 7      & 8      & 9      & 10     \\
+        \hline
+        $t_k\,(\si{s})$ & 1.1473 & 2.0396 & 2.7953 & 3.4633 & 4.0661 & 4.6220 & 5.1391 & 5.6256 & 6.0854 & 6.5231 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+计算 $\beta_6$：
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        数据组                                                     & (1,6)  & (2,7)  & (3,8)  & (4,9)  & (5,10) & $\overline{\beta_6}$ & $\sigma_{\overline{\beta_6}}$ \\
+        \hline
+        $\beta_6=\frac{2\pi(k_nt_m-k_mt_n)}{t_n^2t_m-t_m^2t_n}$ & 0.7711 & 0.7735 & 0.7746 & 0.7763 & 0.7750 & 0.7741               & 0.0009                        \\
+        \hline
+    \end{tabular}
+\end{table}
+
+因此 $\beta_6=(0.7741\pm 0.0009)\,\si{rad/s^2}$
+
+因此 $J_4=\frac{mR(g-R\beta_6)}{\beta_6-\beta_5}=6.22\times10^{-3}\,\si{kg\cdot m^2}$
+
+因此 $J_5=J_4-J_1=0.98\times10^{-3}\,\si{kg\cdot m^2}$
+
+计算值 $J_5^c=2\times(M_{\text{柱}}R_{\text{柱}}^2+M_{\text{柱}}\times d^2)\approx0.74\times10^{-3}\,\si{kg\cdot m^2}$
+
+相对误差 $E\approx32.43\%$，误差显著。
+
+\subsection{误差分析}
+
+\subsubsection*{系统误差}
+\begin{enumerate}
+    \item 圆柱体放置位置可能存在偏差，这会在公式中被平方放大；
+    \item 圆柱体轴线与转轴可能不完全平行，导致其实际转动惯量大于理论计算值；
+    \item 圆柱体可能因离心力或振动产生微小晃动或松动。
+\end{enumerate}
+
+\subsubsection*{随机误差}
+\begin{itemize}
+    \item 忽略两圆柱体参数差异可能引入理论计算值的误差。
+\end{itemize}
+
+\section{分析力矩对转动惯量测量的影响}
+
+\subsection{改变塔轮半径}
+
+塔轮半径（已知）：$20\times10^{-3}\,\si{m}$
+
+\begin{table}[H]
+    \centering
+    $\beta_2'$ 的测量\\
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        k               & 1      & 2      & 3      & 4      & 5      & 6      & 7      & 8      & 9      & 10     \\
+        \hline
+        $t_k\,(\si{s})$ & 0.9528 & 1.6888 & 2.3112 & 2.8601 & 3.3563 & 3.8149 & 4.2424 & 4.6453 & 5.0266 & 5.3901 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+计算 $\beta_2'$：
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        数据组 $(m,n)$                                              & (1,6)  & (2,7)  & (3,8)  & (4,9)  & (5,10) & $\overline{\beta_2'}$ & $\sigma_{\overline{\beta_2'}}$ \\
+        \hline
+        $\beta_2'=\frac{2\pi(k_nt_m-k_mt_n)}{t_n^2t_m-t_m^2t_n}$ & 1.1487 & 1.1459 & 1.1419 & 1.1367 & 1.1291 & 1.1405                & 0.0035                         \\
+        \hline
+    \end{tabular}
+\end{table}
+
+因此 $\beta_2'=(1.1405\pm 0.0035)\,\si{rad/s^2}$
+
+因此 $J_1'=\frac{mR'(g-R'\beta_2')}{\beta_2'-\beta_1}=5.59\times10^{-3}\,\si{kg\cdot m^2}$
+
+
+\begin{table}[H]
+    \centering
+    $\beta_4'$ 的测量\\
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        k               & 1      & 2      & 3      & 4      & 5      & 6      & 7      & 8      & 9      & 10     \\
+        \hline
+        $t_k\,(\si{s})$ & 1.3308 & 2.3558 & 3.2193 & 3.9803 & 4.6653 & 5.2935 & 5.8776 & 6.4263 & 6.9454 & 7.4403 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+计算 $\beta_4'$：
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        数据组 $(m,n)$                                              & (1,6)  & (2,7)  & (3,8)  & (4,9)  & (5,10) & $\overline{\beta_4'}$ & $\sigma_{\overline{\beta_4'}}$ \\
+        \hline
+        $\beta_4'=\frac{2\pi(k_nt_m-k_mt_n)}{t_n^2t_m-t_m^2t_n}$ & 0.6058 & 0.6100 & 0.6131 & 0.6161 & 0.6164 & 0.6123                & 0.0020                         \\
+        \hline
+    \end{tabular}
+\end{table}
+
+因此 $\beta_4'=(0.6123\pm 0.0020)\,\si{rad/s^2}$
+
+因此 $J_2'=\frac{mR'(g-R'\beta_4')}{\beta_4'-\beta_3}=10.90\times10^{-3}\,\si{kg\cdot m^2}$
+
+因此 $J_3'=J_2'-J_1'=5.31\times10^{-3}\,\si{kg\cdot m^2}$
+
+计算值 $J_3^c\approx5.38\times10^{-3}\,\si{kg\cdot m^2}$
+
+相对误差 $E\approx−1.30\%$
+
+\subsection{改变砝码质量}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+        测量次数                    & 1    & 2    & 3    & 4    & 5    & 6    & 平均值  & $\sigma_{\text{平均值}}$ \\
+        \hline
+        $m\,(10^{-3}\,\si{kg})$ & 28.7 & 28.7 & 28.7 & 28.7 & 28.6 & 28.7 & 28.7 & 0.0167                \\
+        \hline
+    \end{tabular}
+\end{table}
+
+因此 $m'=(28.7\pm0.017)\times10^{-3}\,\si{kg}$
+
+塔轮半径：$15\times10^{-3}\,\si{m}$
+
+\begin{table}[H]
+    \centering
+    $\beta_2''$ 的测量\\
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        k               & 1      & 2      & 3      & 4      & 5      & 6      & 7      & 8      & 9      & 10     \\
+        \hline
+        $t_k\,(\si{s})$ & 1.2688 & 2.2469 & 3.0770 & 3.8130 & 4.4817 & 5.0975 & 5.6717 & 6.2119 & 6.7251 & 7.2144 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+计算 $\beta_2''$：
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        数据组 $(m,n)$                                               & (1,6)  & (2,7)  & (3,8)  & (4,9)  & (5,10) & $\overline{\beta_2''}$ & $\sigma_{\overline{\beta_2''}}$ \\
+        \hline
+        $\beta_2''=\frac{2\pi(k_nt_m-k_mt_n)}{t_n^2t_m-t_m^2t_n}$ & 0.6382 & 0.6309 & 0.6267 & 0.6243 & 0.6220 & 0.6284                 & 0.0029                          \\
+        \hline
+    \end{tabular}
+\end{table}
+
+因此 $\beta_2''=(0.6284\pm 0.0029)\,\si{rad/s^2}$
+
+因此 $J_1''=\frac{m'R(g-R'\beta_2'')}{\beta_2''-\beta_1}=4.92\times10^{-3}\,\si{kg\cdot m^2}$
+
+
+\begin{table}[H]
+    \centering
+    $\beta_4''$ 的测量\\
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        k               & 1      & 2      & 3      & 4      & 5      & 6      & 7      & 8      & 9      & 10      \\
+        \hline
+        $t_k\,(\si{s})$ & 1.7658 & 3.1341 & 4.2948 & 5.3257 & 6.2622 & 7.1273 & 7.9330 & 8.6903 & 9.4051 & 10.0870 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+计算 $\beta_4''$：
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        数据组 $(m,n)$                                               & (1,6)  & (2,7)  & (3,8)  & (4,9)  & (5,10) & $\overline{\beta_4''}$ & $\sigma_{\overline{\beta_4''}}$ \\
+        \hline
+        $\beta_4''=\frac{2\pi(k_nt_m-k_mt_n)}{t_n^2t_m-t_m^2t_n}$ & 0.3229 & 0.3198 & 0.3174 & 0.3171 & 0.3170 & 0.3188                 & 0.0011                          \\
+        \hline
+    \end{tabular}
+\end{table}
+
+因此 $\beta_4''=(0.3188 \pm 0.0011)\,\si{rad/s^2}$
+
+因此 $J_2''=\frac{m'R(g-R\beta_4'')}{\beta_4''-\beta_3}=10.31\times10^{-3}\,\si{kg\cdot m^2}$
+
+因此 $J_3''=J_2''-J_1''=5.39\times10^{-3}\,\si{kg\cdot m^2}$
+
+计算值 $J_3^c\approx5.38\times10^{-3}\,\si{kg\cdot m^2}$
+
+相对误差 $E\approx0.19\%$
+
+\subsection{探索测量的最佳实验条件}
+
+\subsubsection*{力矩变化对测量结果的影响}
+
+原始条件下，转动惯量测量值比理论值小4.46\%，存在明显负偏差；
+
+增大塔轮半径（力矩增大）后，相对误差减小到-1.30\%，测量值更接近理论值；
+
+减小砝码质量（力矩减小）后，相对误差进一步减小到+0.19\%，测量值与理论值几乎完全吻合。
+
+\subsubsection*{可能原因分析}
+
+摩擦力矩可能与角速度有关。当力矩变化时，若系统的角加速度减小，摩擦力将更接近恒定。
+
+较大的力矩可能导致系统振动加剧、细绳摆动等，影响角加速度测量的稳定性。适度减小力矩可使转动更平稳，时间测量更准确。
+
+\subsubsection*{最佳实验条件}
+
+对于本实验装置，采用较小的外力矩（较小砝码质量、适中塔轮半径）能够获得更准确的转动惯量测量结果。
+
+\section{分析与讨论}
+误差分析已在上文中详细给出。因为本次实验分析过于繁琐，需要将原始数据附在实验报告右侧，为方便阅读，故在此处完成思考题。
+
+\begin{enumerate}
+    \item 分析影响实验精度的各种因素，如何减少这些因素的影响？
+          \begin{itemize}
+              \item 系统误差及改进措施：
+                    \begin{enumerate}
+                        \item 仪器固有误差：使用前校准仪器；
+                        \item 塔轮半径 $R$ 的不确定度：用游标卡尺多次测量塔轮不同位置的半径取平均；
+                        \item 几何安装偏差：仔细调节，确保样品几何中心与转轴重合；
+                        \item 摩擦力矩的非恒定性：采用较小力矩，使系统工作在摩擦力更稳定的低速区间；
+                        \item 细绳质量、弹性、滑轮转动惯量等：使用轻质、无弹性的细绳，确保细绳在塔轮上紧密且不重叠缠绕，滑轮尽量选用转动惯量小的型号。
+                    \end{enumerate}
+              \item 随机误差及改进措施：
+                    \begin{enumerate}
+                        \item 测量离散性：增加测量次数；
+                        \item 环境扰动：将仪器置于稳固的实验台上，远离风扇、门窗等气流源，实验期间保持安静，避免人员走动干扰。
+                    \end{enumerate}
+          \end{itemize}
+          此外，可通过预实验探索最佳力矩条件（如本实验发现 $m\approx 29\si{g}$ 时误差最小），提升整体精度。
+    \item 是否可以通过实验和作图，既求出转动惯量，又求出摩擦力矩？\\
+          可以。通过一次拟合同时获得两个物理量，减少中间计算误差，并可检验模型的线性符合程度。
+          \begin{itemize}
+              \item 固定塔轮半径 $R$，改变砝码质量 $m$，测量对应的角加速度 $\beta$。由转动定律与牛顿第二定律可得：
+                    $$mgR = (J + mR^2)\beta + M_\mu$$
+                    即 $mgR - mR^2\beta = J\beta + M_\mu$。令 $X = \beta,\ Y = mgR - mR^2\beta$，则得线性方程：
+                    $$Y = JX + M_\mu$$
+              \item 作图方法：
+                    \begin{enumerate}
+                        \item 保持 $R$ 不变，选取5~6个不同的 $m_i$，测量对应的 $\beta_i$。
+                        \item 计算各组 $(X_i, Y_i) = (\beta_i,\ m_i gR - m_i R^2 \beta_i)$。
+                        \item 以 $X$ 为横坐标、$Y$ 为纵坐标，在坐标系中描点 $(X_i, Y_i)$。
+                        \item 用最小二乘法拟合直线 $Y = kX + b$。
+                    \end{enumerate}
+              \item 得到结果：
+                    \begin{itemize}
+                        \item 直线斜率 $k$ 即为转动惯量 $J$；
+                        \item 直线截距 $b$ 即为摩擦力矩 $M_\mu$。
+                    \end{itemize}
+          \end{itemize}
+\end{enumerate}
+
+\end{document}

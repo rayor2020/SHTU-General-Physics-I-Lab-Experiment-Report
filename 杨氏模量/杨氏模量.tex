@@ -1,0 +1,104 @@
+
+\documentclass[12pt]{article}
+
+% 设置中文支持
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{diagbox}  % 用于制作斜线表头
+
+% 设置页面边距
+\usepackage[a4paper, left=1.91cm, right=1.91cm, top=2.54cm, bottom=2.54cm]{geometry}
+
+% 设置标题、作者和日期
+\title{测量金属丝的杨氏模量物理实验报告}
+\author{袁子强\hspace{1cm} 2025533009}
+\date{\today}
+
+\begin{document}
+
+% 显示标题
+\maketitle
+% 记得剔除粗差、计算不确定度（计算过程）、图上标注原始数据、分析过程
+
+\section{数据测量}
+
+光杠杆常数 $D=3.504\,\si{cm}$，金属丝的原长 $L=73.8\,\si{cm}$，反射镜转轴到标尺的垂直距离 $H=69.9\,\si{cm}$。
+
+\begin{table}[H]
+    \centering
+    \caption{金属丝直径测量}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \diagbox{样品}{次数}                & 1      & 2     & 3      & 4     & 5      & 6     \\ \hline
+        零差 $d_0\,/\,\si{cm}$            & -0.001 & 0.000 & -0.001 & 0.000 & -0.001 & 0.000 \\ \hline
+        直径视值 $d_{\text{视}\,/\,\si{cm}}$ & 0.063  & 0.064 & 0.065  & 0.064 & 0.064  & 0.064 \\ \hline
+        直径 $d\,/\,\si{cm}$              & 0.064  & 0.064 & 0.066  & 0.064 & 0.065  & 0.064 \\ \hline
+    \end{tabular}
+\end{table}
+
+因此，$\overline{d}=0.0645\,\si{cm}$，$\sigma_{\overline{d}}=0.00034\,\si{cm}$。
+
+因此 $d=(0.0645\pm 0.00034)\,\si{cm}$。
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+                           & 拉力增加顺序                     & 拉力减小顺序                     \\ \hline
+        拉力 $m\,/\,\si{kg}$ & 标尺刻度 $x_i^{+}\,/\,\si{cm}$ & 标尺刻度 $x_i^{-}\,/\,\si{cm}$ \\ \hline
+        0.00               & 1.25                       & 1.30                       \\ \hline
+        1.00               & 1.70                       & 1.80                       \\ \hline
+        2.00               & 2.20                       & 2.25                       \\ \hline
+        3.00               & 2.70                       & 2.70                       \\ \hline
+        4.00               & 3.15                       & 3.15                       \\ \hline
+        5.00               & 3.60                       & 3.60                       \\ \hline
+        6.00               & 4.05                       & 4.10                       \\ \hline
+        7.00               & 4.50                       & 4.50                       \\ \hline
+        8.00               & 4.95                       & 5.00                       \\ \hline
+        9.00               & 5.40                       & 5.40                       \\ \hline
+        10.00              & 5.80                       & 5.80                       \\ \hline
+    \end{tabular}
+\end{table}
+
+得到 $\Delta x$：
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|cccccccccc}
+        次数 & 1    & 2    & 3    & 4    & 5    & 6    & 7    & 8    & 9    & 10   \\ \hline
+        加力 & 0.45 & 0.50 & 0.50 & 0.45 & 0.45 & 0.45 & 0.45 & 0.45 & 0.45 & 0.40 \\
+        卸力 & 0.50 & 0.45 & 0.45 & 0.45 & 0.45 & 0.50 & 0.40 & 0.50 & 0.40 & 0.40
+    \end{tabular}
+\end{table}
+
+因此，$\overline{\Delta x}=0.453\,\si{cm}$，$\sigma_{\overline{\Delta x}}=0.0077\,\si{cm}$。
+
+因此 $\Delta x=(0.453\pm 0.008)\,\si{cm}$。
+
+\section{杨氏模量计算}
+$$
+    E=\frac{8mgLH}{\pi d^2 D}\cdot\frac{1}{\Delta x}=\frac{8\times 1.00 \times 9.8\times 0.738\times 0.699}{\pi\times(6.45\times 10^{-4})^2\times 35.04\times 10^{-3}}\cdot\frac{1}{4.53\times 10^{-3}}\approx 1.95\times 10^{11}\,\si{Pa}
+$$
+
+\section{误差分析}
+
+\subsection*{系统误差}
+\begin{enumerate}
+    \item 测量仪器固有误差；
+    \item 系统的调节可能未完全达到理想状态；
+    \item 实验过程中环境温度、湿度等条件的变化可能导致金属丝、测量仪器发生热胀冷缩，从而引起长度测量值的微小变化；
+    \item 实际金属丝可能存在材料不均匀、截面非理想圆形、弯曲等情况，导致理论模型与实际存在偏差。
+\end{enumerate}
+
+\subsection*{随机误差}
+\begin{enumerate}
+    \item 读数与估读存在主观性；
+    \item 加力与卸力过程中，施力螺母旋转的均匀性、望远镜的轻微晃动、实验桌的微小震动等可能导致表尺读数波动。
+\end{enumerate}
+
+\end{document}

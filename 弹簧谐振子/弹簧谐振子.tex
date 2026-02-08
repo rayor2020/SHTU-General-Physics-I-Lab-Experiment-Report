@@ -1,0 +1,180 @@
+\documentclass[12pt,a4paper]{article}
+
+% 导入必要的宏包
+\usepackage{ctex}           % 支持中文
+\usepackage{amsmath}        % 数学公式支持
+\usepackage{amsfonts}       % 数学字体
+\usepackage{amssymb}        % 数学符号
+\usepackage{graphicx}       % 图形支持
+\usepackage{float}          % 浮动体控制
+\usepackage{booktabs}       % 美观的表格线条
+\usepackage{multirow}       % 表格中跨行单元格
+\usepackage{geometry}       % 页面设置
+\usepackage{fancyhdr}       % 页眉页脚
+\usepackage{cite}           % 参考文献引用
+\usepackage{pgfplots}
+
+% 设置页面边距
+\geometry{left=3.18cm,right=3.18cm,top=2.54cm,bottom=2.54cm}
+
+% 设置标题、作者和日期
+\title{弹簧谐振子周期测量实验数据记录与结果}
+\author{袁子强\hspace{1cm} 2025533009}
+\date{\today}
+
+\begin{document}
+
+% 生成标题
+\maketitle
+
+\section{用新型焦利秤测定弹簧劲度系数$K$}
+
+\subsection{原始数据}
+
+\begin{table}[H]
+    \center
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+砝码质量$m$ ($10^{-3}$kg) & 0 & 1 & 2 & 3 & 4 \\ 
+\hline
+弹簧长度$y_n$ ($10^{-3}$m) & 327.30 & 332.00 & 338.60 & 343.10 & 349.00 \\
+\hline
+砝码质量$m$ ($10^{-3}$kg) & 5 & 6 & 7 & 8 & 9 \\
+\hline
+弹簧长度$y_n$ ($10^{-3}$m) & 354.80 & 360.80 & 366.04 & 371.70 & 377.16 \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \center
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+砝码质量$m$ ($10^{-3}$kg) & 9 & 8 & 7 & 6 & 5 \\ 
+\hline
+弹簧长度$y_n$ ($10^{-3}$m) & 377.16 & 371.80 & 366.40 & 360.60 & 354.88 \\
+\hline
+砝码质量$m$ ($10^{-3}$kg) & 4 & 3 & 2 & 1 & 0 \\
+\hline
+弹簧长度$y_n$ ($10^{-3}$m) & 349.40 & 343.50 & 337.50 & 332.18 & 326.98 \\
+\hline
+\end{tabular}
+\end{table}
+
+$F=K\cdot\Delta y$，$\Delta y$即$(y_n-y_0)$，作$F-\Delta y$拟合直线，斜率即为$K$。上海地区$\text{g}=9.794\text{N}/\text{kg}$
+
+\subsection{数据处理}
+
+线性拟合结果：$F = 1788.7\Delta y$，相关系数$r = 0.941$。
+
+劲度系数: $K = 1788.7\pm 290.8\text{N/m}$。
+
+图见下页。
+
+\begin{tikzpicture}
+    \begin{axis}[
+        width=12cm,
+        height=8cm,
+        title={弹簧劲度系数测量数据拟合},
+        xlabel={伸长量 $\Delta y$ ($10^{-3}$ m)},
+        ylabel={拉力 $F$ ($10^{-3}$ N)},
+        grid=major,
+        legend pos=north west,
+        scatter/classes={a={mark=*,red}}
+    ]
+    
+    % 加载过程数据点 (红色)
+    \addplot[scatter,only marks,scatter src=explicit symbolic]
+    coordinates {
+        (0.16, 0)[a]
+        (4.86, 9794)[a]
+        (11.46, 19588)[a]
+        (15.96, 29382)[a]
+        (21.86, 39176)[a]
+        (27.66, 48970)[a]
+        (33.66, 58764)[a]
+        (38.90, 68558)[a]
+        (44.56, 78352)[a]
+        (50.02, 88146)[a]
+        (50.02, 88146)[a]
+        (44.66, 78352)[a]
+        (39.26, 68558)[a]
+        (33.46, 58764)[a]
+        (27.74, 48970)[a]
+        (22.26, 39176)[a]
+        (16.36, 29382)[a]
+        (10.36, 19588)[a]
+        (5.04, 9794)[a]
+        (-0.16, 0)[a]
+    };
+    \addlegendentry{数据}
+    
+    % 线性拟合直线
+    \addplot[domain=-5:55, thick, black, dashed] {1788.7 * x};
+    \addlegendentry{拟合直线 $F = 1788.7\Delta y$}
+    
+    % 在图中添加拟合方程和相关系数
+    \node [anchor=south east, draw, fill=white, rounded corners] at (axis description cs:0.97,0.05) {
+        \begin{minipage}{3cm}
+            \scriptsize
+            相关系数: $r = 0.941$
+        \end{minipage}
+    };
+    
+    \end{axis}
+\end{tikzpicture}
+
+\subsection{误差分析}
+
+加载和卸载曲线不重合，存在明显迟滞，导致数据分散度较大。
+
+系统误差可能包括弹簧质量、空气阻力等因素的影响。
+
+\section{测量弹簧简谐振动周期，计算得出弹簧的劲度系数$K$}
+
+\subsection{原始数据}
+
+\begin{table}[H]
+\center
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+次数 & 1 & 2 & 3 & 4 & 5 \\ 
+\hline
+10T & 7.610 & 7.617 & 7.600 & 7.605 & 7.610 \\
+\hline
+次数 & 6 & 7 & 8 & 9 & 10 \\
+\hline
+10T & 7.626 & 7.616 & 7.607 & 7.607 & 7.608 \\
+\hline
+\end{tabular}
+\end{table}
+
+其中悬挂砝码质量$M=19$g，弹簧质量$M_0=14.1$g。
+
+\subsection{数据处理}
+\begin{itemize}
+    \item 求$\overline{T}, \sigma_{\overline{T}}$。
+
+$\overline{T}=0.76106$s，$\sigma_{\overline{T}}=0.000797$s\\
+$\therefore T=0.76106\pm 0.00080$s。
+    \item 由$T=2\pi\sqrt{\frac{M+PM_0}{K}}$求出$K$。
+
+弹簧等效质量$M_{\text{eff}}=0.0237$kg\\
+$\therefore K=1615.6\pm 34.2$N/m
+\end{itemize}
+
+相对差异（与第一种方法）：$10.1\%$，但两种方法的测量不确定度范围有部分重叠，结果在误差范围内基本一致；其中，后者相对不确定度较小。
+
+\subsection{误差分析}
+
+系统误差：
+\begin{itemize}
+    \item 弹簧有效质量系数$p=\frac{1}{3}$是理论近似值，实际可能略有差异；
+    \item 空气阻力和弹簧内部阻尼对振动周期的影响。
+\end{itemize}
+
+随机误差：
+
+静态测量数据离散度较大，导致不确定度较高。
+
+\end{document}

@@ -1,0 +1,247 @@
+
+\documentclass[12pt]{article}
+
+% 设置中文支持
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{multicol}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% 设置页面边距
+\usepackage[a4paper, left=3.18cm, right=3.18cm, top=2.54cm, bottom=2.54cm]{geometry}
+
+% 设置标题、作者和日期
+\title{落球法测液体的粘滞系数实验数据记录与分析}
+\author{袁子强\hspace{1cm} 2025533009}
+\date{\today}
+
+\begin{document}
+
+% 显示标题
+\maketitle
+
+\section{小球直径 $d$}
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+次数 & 1 & 2 & 3 & 4 & 5 \\
+\hline
+$d$ ($10^{-3}$m) & 0.990 & 0.980 & 0.980 & 0.990 & 0.980 \\
+\hline
+\end{tabular}
+\end{table}
+
+求$\overline{d}$、$\sigma_{\overline{d}}$。
+
+\subsection*{平均值 $\overline{d}$、标准偏差 $\sigma_{\overline{d}}$}
+$$
+\begin{aligned}
+\overline{d} & = 0.984 \times 10^{-3} \, \text{m} \\
+\sigma_{\overline{d}} & = 0.002449 \times 10^{-3} \, \text{m}
+\end{aligned}
+$$
+
+\subsection*{不确定度 $U$}
+取不确定度为平均值的标准偏差：
+$$
+U = \sigma_{\overline{d}} = 0.002449 \times 10^{-3} \, \text{m} \approx 0.0025 \times 10^{-3} \, \text{m}
+$$
+
+最终结果：$\overline{d} = (0.984 \pm 0.0025) \times 10^{-3} \,$m。
+
+\subsection{误差分析}
+测量的不确定度主要来源于测量过程中的随机误差。
+
+\subsubsection*{系统误差}
+\begin{enumerate}
+\item 螺旋测微器在使用前可能未正确校准零点，或引入了一个固定的偏差；
+\item 螺旋测微器本身的制造精度会带来系统误差，通常为$\pm 0.004$\,mm。
+\end{enumerate}
+
+\subsubsection*{随机误差}
+\begin{enumerate}
+\item 虽然螺旋测微器可估读到$0.001$\,mm，但在判断刻度线是否对齐时存在主观性，导致多次测量结果在末位数字上波动；
+\item 尽管使用了棘轮机构以保证恒定的测量力，但每次操作的微小差异仍可能导致测杆对小球施加的压力略有不同，从而引起读数变化；
+\item 小球并非理想的完美球体，可能存在微小的椭圆度或表面瑕疵\,—\,在不同方位测量时，得到的直径值会有微小差异。
+\end{enumerate}
+
+\section{$v_0$ 的测定}
+$L = 5 \times 10^{-2}$\,m，（1个刻度为1\,cm）；$v_0 = \frac{L}{t}$。
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|cc|c|}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{$T$\,($^\circ$C)}} & \multicolumn{7}{c|}{$t$\,(s)} & \multicolumn{1}{c|}{\multirow{2}{*}{$v_0$\,(m/s)}} \\
+\cline{2-8}
+\multicolumn{1}{|c|}{} & 1 & 2 & 3 & 4 & 5 & $\overline{t}$ & $\sigma_{\overline{t}}$ & \multicolumn{1}{c|}{} \\
+\hline
+26 & 9.43 & 9.44 & 9.22 & 9.18 & 9.07 & 9.27 & 0.0725 & $5.39\times 10^{-3}$ \\
+\hline
+28 & 7.91 & 7.90 & 7.71 & 7.78 & 7.86 & 7.83 & 0.0381 & $6.39 \times 10^{-3}$ \\
+\hline
+30 & 7.22 & 7.17 & 7.23 & 7.13 & 6.93 & 7.14 & 0.0546 & $7.00 \times 10^{-3}$ \\
+\hline
+32 & 6.23 & 6.03 & 6.14 & 6.15 & 6.04 & 6.12 & 0.0373 & $8.17 \times 10^{-3}$ \\
+\hline
+34 & 5.34 & 5.31 & 5.45 & 5.23 & 5.24 & 5.31 & 0.0398 & $9.42 \times 10^{-3}$ \\
+\hline
+36 & 4.76 & 4.76 & 4.64 & 4.64 & 4.71 & 4.70 & 0.0269 & $10.64 \times 10^{-3}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+根据理论公式求$\eta$。\\（$\rho=7.8\times10^3\,\text{kg/m$^3$},\ \rho_0=0.95\times10^3\,\text{kg/m$^3$},\ D=2.0\times10^{-2}\,\text{m}$）
+
+\subsection*{粘度 $\eta$ 计算}
+\subsubsection*{已知参数}
+$$
+\begin{aligned}
+\rho &= 7.8 \times 10^3 \, \text{kg/m}^3 \\
+\rho_0 &= 0.95 \times 10^3 \, \text{kg/m}^3 \\
+g &= 9.794 \, \text{m/s}^2 \\
+d &= 0.984 \times 10^{-3} \, \text{m} \\
+D &= 2.0 \times 10^{-2} \, \text{m}
+\end{aligned}
+$$
+
+\subsubsection*{修正系数}
+$$
+(1+2.4\times\frac{d}{D}) = 1 + 2.4 \times \frac{0.984 \times 10^{-3}}{2.0 \times 10^{-2}} = 1.1181
+$$
+
+\subsubsection*{计算 $\eta$}
+以 $26^\circ$C 为例：
+$$
+\begin{aligned}
+\eta &= \frac{(7800 - 950) \times 9.794 \times (0.984 \times 10^{-3})^2}{18 \times 5.393 \times 10^{-3} \times 1.1181} \\
+&= \frac{6850 \times 9.794 \times 9.682 \times 10^{-7}}{1.085 \times 10^{-1}} = 0.599 \, \text{Pa·s} \\
+\eta_1 &= \eta - \frac{3}{16} v_0 d \rho_0 = 0.599 - \frac{3}{16} \times 5.393 \times 10^{-3} \times 0.984 \times 10^{-3} \times 950 \\
+&= 0.599 - 9.45 \times 10^{-4} = 0.598 \, \text{Pa·s}
+\end{aligned}
+$$
+
+\dots
+
+\subsubsection*{最终结果}
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{c|cccccc}
+        $T$\,($^\circ$C) & 26 & 28 & 30 & 32 & 34 & 36 \\
+\hline
+        $\eta$\,(Pa$\cdot$s) & 0.599 & 0.506 & 0.461 & 0.395 & 0.343 & 0.304 \\
+        $\eta_1$\,(Pa$\cdot$s) & 0.598 & 0.505 & 0.460 & 0.395 & 0.342 & 0.303 \\
+    \end{tabular}
+\end{table}
+
+\subsection*{$\eta$\,-\,$T$ 图}
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=14cm,
+    height=9cm,
+    title={蓖麻油粘度 $\eta$ 与温度 $T$ 关系},
+    xlabel={温度 $T$ ($^\circ$C)},
+    ylabel={粘度 $\eta$ (\text{Pa$\cdot$s})},
+    grid=major,
+    legend pos=north east,
+    xmin=25, xmax=37,
+    ymin=0.25, ymax=0.65,
+    xtick distance=2,
+    ytick distance=0.05,
+]
+
+% η数据点（蓝色方块）
+\addplot[
+    only marks,
+    mark=square*,
+    blue,
+    mark size=3pt,
+    nodes near coords,
+    point meta=explicit symbolic,
+    every node near coord/.style={anchor=south, color=blue, yshift=5pt}
+]
+coordinates {
+    (26, 0.599) [\scriptsize$0.599$]
+    (28, 0.506) [\scriptsize$0.506$]
+    (30, 0.461) [\scriptsize$0.461$]
+    (32, 0.395) [\scriptsize$0.395$]
+    (34, 0.343) [\scriptsize$0.343$]
+    (36, 0.304) [\scriptsize$0.304$]
+};
+\addlegendentry{$\eta$ (基本粘度)}
+
+% η1数据点（红色圆圈）
+\addplot[
+    only marks,
+    mark=*,
+    red,
+    mark size=3pt,
+    nodes near coords,
+    point meta=explicit symbolic,
+    every node near coord/.style={anchor=north, color=red, yshift=-5pt}
+]
+coordinates {
+    (26, 0.598) [\scriptsize$0.598$]
+    (28, 0.505) [\scriptsize$0.505$]
+    (30, 0.460) [\scriptsize$0.460$]
+    (32, 0.394) [\scriptsize$0.394$]
+    (34, 0.342) [\scriptsize$0.342$]
+    (36, 0.303) [\scriptsize$0.303$]
+};
+\addlegendentry{$\eta_1$ (修正粘度)}
+
+% 连接线（虚线）
+\addplot[blue, loosely dashed, thick] coordinates {
+    (26,0.599) (28,0.506) (30,0.461) (32,0.395) (34,0.343) (36,0.304)
+};
+\addplot[red, loosely dashed, thick] coordinates {
+    (26,0.598) (28,0.505) (30,0.460) (32,0.394) (34,0.342) (36,0.303)
+};
+
+% 添加注释框
+% \node [anchor=north east, draw, fill=white, rounded corners, align=left] at (axis description cs:0.98,0.98) {
+%     \scriptsize
+%     实验参数: \\
+%     $d = \qty{0.984e-3}{m}$ \\
+%     $D = \qty{2.0e-2}{m}$ \\
+%     $\rho = \qty{7.8e3}{kg/m^3}$ \\
+%     $\rho_0 = \qty{0.95e3}{kg/m^3}$
+% };
+
+\end{axis}
+\end{tikzpicture}
+
+\subsection*{粘度随温度变化关系}
+\begin{itemize}
+    \item 粘度随温度升高而显著降低，温度每升高 $1\,^\circ$C，粘度约减少 $5.2\,\%$；
+    \item 从 $26\,^\circ$C 到 $36\,^\circ$C，粘度从 $0.599\,\text{Pa$\cdot$s}$ 降至 $0.304\,\text{Pa$\cdot$s}$，下降约 $49\,\%$；
+    \item 在实验温度范围内，粘度变化符合指数衰减规律；
+    \item 修正项 $\eta_1$ 与 $\eta$ 差异很小（约 $0.1\%$），说明雷诺数修正影响较小。
+\end{itemize}
+
+\subsection{误差分析}
+测量的误差主要来源于速度测量和粘度计算过程。
+
+\subsubsection*{系统误差}
+\begin{enumerate}
+\item 理论模型可能存在管壁边界修正不足、温度速度增大时公式适用性降低、忽略雷诺数高阶修正等近似误差；
+\item 实验装置可能存在玻璃管微小倾斜、液体内部温度微小梯度和波动等误差；
+\item 计算过程中存在参数传递放大误差、忽略蓖麻油密度随温度变化等误差。
+\end{enumerate}
+
+\subsubsection*{随机误差}
+\begin{enumerate}
+\item 手动操作电子停表的反应时间存在约 0.1\,-\,0.2\,s 的随机波动，特别是在判断小球通过刻度线的瞬间，导致计时起点和终点的不一致；
+\item 释放小球时可能产生微小扰动，影响小球达到终端速度的过程；
+\item 小球可能未严格沿管轴下落，产生轻微摆动或靠近管壁，影响下落速度。
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,82 @@
+
+\documentclass[12pt]{article}
+
+% 设置中文支持
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{siunitx}
+\usepackage{float}
+
+% 设置页面边距
+\usepackage[a4paper, left=1.91cm, right=1.91cm, top=2.54cm, bottom=2.54cm]{geometry}
+
+% 设置标题、作者和日期
+\title{固体密度测量物理实验报告}
+\author{袁子强\hspace{1cm} 2025533009}
+\date{\today}
+
+\begin{document}
+
+% 显示标题
+\maketitle
+% 记得剔除粗差、计算不确定度（计算过程）、图上标注原始数据、分析过程
+
+1号小球质量 1.06\,\si{g}\hspace{1cm}2号小球质量 0.85\,\si{g}\hspace{1cm}3号小球质量 3.76\,\si{g}
+
+\begin{table}[H]
+    \centering
+    \caption{实验小球的直径测量}
+    千分尺的零差 $X_0$ 为 0.00\,\si{mm} \\
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        次数              & 1      & 2      & 3      & 4      & 5      & 6      \\ \hline
+        1号小球直径测量 度数 $x$ & 8.000  & 8.000  & 8.000  & 7.990  & 8.000  & 8.000  \\ \hline
+        2号小球直径测量 度数 $x$ & 7.940  & 7.930  & 7.930  & 7.930  & 7.930  & 7.930  \\ \hline
+        3号小球直径测量 度数 $x$ & 10.630 & 10.540 & 10.660 & 10.670 & 10.640 & 10.650 \\ \hline
+    \end{tabular}
+\end{table}
+
+\begin{align*}
+     & \overline{d_1}=7.998\,\si{mm}  &  & \sigma_{\overline{d_1}}=1.67\times 10^{-3}\,\si{mm} &  & d_1=(7.998\pm 0.00167)\,\si{mm}  \\
+     & \overline{d_2}=7.932\,\si{mm}  &  & \sigma_{\overline{d_2}}=1.67\times 10^{-3}\,\si{mm} &  & d_2=(7.932\pm 0.00167)\,\si{mm}  \\
+     & \overline{d_3}=10.632\,\si{mm} &  & \sigma_{\overline{d_3}}=0.01922\,\si{mm}            &  & d_3=(10.632\pm 0.01922)\,\si{mm} \\
+\end{align*}
+
+因此，$v_1=2.679\times 10^{-7}\,\si{m^3},\ v_2=2.613\times 10^{-7}\,\si{m^3},\ v_3=6.293\times 10^{-7}\,\si{m^3}$。
+
+因此，\\
+$\rho_1=3957\,\si{kg\cdot m^{-3}}$，应为氧化铝，误差 $-1.075\%$\\
+$\rho_2=3253\,\si{kg\cdot m^{-3}}$，应为氮化硅，误差 $-5.436\%$\\
+$\rho_3=5975\,\si{kg\cdot m^{-3}}$，应为氧化锆，误差 $2.173\%$
+
+\begin{table}[H]
+    \centering
+    \caption{固体密度实验球质量测量表}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        小球编号                 & 次数             & 1      & 2      & 3      & 4      & 5      & 6      \\ \hline
+        \multirow{2}{*}{1号球} & 小球放置前度数/\si{g} & 500.89 & 500.84 & 500.80 & 500.77 & 500.76 & 500.77 \\ \cline{2-8}
+                             & 小球放置后读数/\si{g} & 501.13 & 501.10 & 501.09 & 501.08 & 501.07 & 501.06 \\ \hline
+        \multirow{2}{*}{2号球} & 小球放置前度数/\si{g} & 495.93 & 495.91 & 495.94 & 496.00 & 495.99 & 496.05 \\ \cline{2-8}
+                             & 小球放置后读数/\si{g} & 496.24 & 496.27 & 496.31 & 496.34 & 496.36 & 496.37 \\ \hline
+        \multirow{2}{*}{3号球} & 小球放置前度数/\si{g} & 499.55 & 499.46 & 499.47 & 499.46 & 499.44 & 499.46 \\ \cline{2-8}
+                             & 小球放置后读数/\si{g} & 500.16 & 500.13 & 500.14 & 500.11 & 500.11 & 500.12 \\ \hline
+    \end{tabular}
+\end{table}
+
+\begin{align*}
+     & \overline{M_{j_1}}=0.28\,\si{g}  &  & \sigma_{\overline{M_{j_1}}}=0.0115\,\si{g}  &  & M_{j_1}=(0.28\pm 0.0115)\,\si{g}   \\
+     & \overline{M_{j_2}}=0.345\,\si{g} &  & \sigma_{\overline{M_{j_2}}}=0.01057\,\si{g} &  & M_{j_2}=(0.345\pm 0.01057)\,\si{g} \\
+     & \overline{M_{j_3}}=0.665\,\si{g} &  & \sigma_{\overline{M_{j_3}}}=0.00957\,\si{g} &  & M_{j_3}=(0.655\pm 0.00957)\,\si{g} \\
+\end{align*}
+
+因此，\\
+$\rho_1=\frac{M_{i_1}}{M_{i_1}-M_{j_1}}\rho_{\text{水}}=1359\,\si{kg\cdot m^{-3}}$，误差 $-66.03\%$\\
+$\rho_2=\frac{M_{i_2}}{M_{i_2}-M_{j_2}}\rho_{\text{水}}=1683\,\si{kg\cdot m^{-3}}$，误差 $-51.08\%$\\
+$\rho_3=\frac{M_{i_3}}{M_{i_3}-M_{j_3}}\rho_{\text{水}}=1211\,\si{kg\cdot m^{-3}}$，误差 $-79.30\%$
+
+\end{document}
